@@ -1,9 +1,9 @@
 import express, { Request, Response } from 'express';
 
-const router = express.Router();
+const rootController = express.Router();
 
-router.get('/', (req: Request, res: Response) => {
+rootController.get('/', (req: Request, res: Response) => {
   res.send({ response: 'I am alive' }).status(200);
 });
 
-export default router;
+export default rootController;
