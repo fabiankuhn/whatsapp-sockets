@@ -6,23 +6,23 @@ import getEnvVars from '../../../environment';
 
 const TimeDisplay = () => {
   const { apiUrl } = getEnvVars();
-  const [response, setResponse] = useState<Date | null>(null);
+  const [date, setDate] = useState<Date | null>(null);
 
   useEffect(() => {
     const socket = io(apiUrl);
-    socket.on('FromAPI', (data: Date) => {
-      setResponse(data);
+    socket.on('FromAPI', (dateResponse: Date) => {
+      setDate(dateResponse);
     });
     return () => { socket.disconnect(); };
   }, []);
 
-  if (!response) {
+  if (!date) {
     return null;
   }
   return (
     <View>
       <Text>
-        {`it's the ${moment(response).format('DD. MMMM YYYY, HH:mm:ss:SS')}`}
+        {`it's the ${moment(date).format('DD. MMMM YYYY, HH:mm:ss:SS')}`}
       </Text>
     </View>
   );
