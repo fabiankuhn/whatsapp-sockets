@@ -8,13 +8,15 @@ import { socketServer } from './sockets/socketServer';
 const port = process.env.PORT || 4001;
 const app: Express = express();
 const server = http.createServer(app);
-
 const io = new Server(server, { cors: { origin: 'http://localhost:19006' } });
+
 // Use Socket Server
 socketServer(io);
 
 // Use Controller
 app.use(rootController);
 
+// Start Server
 server.listen(port, () => console.log(`Listening on port ${port}`));
+
 export { server };

@@ -20,7 +20,7 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <Button
-        title="View Time"
+        title={isTimeVisible ? 'Hide Time' : 'View Time'}
         onPress={() => setIsTimeVisible((prevState) => !prevState)}
       />
       {isTimeVisible && <TimeDisplay /> }
