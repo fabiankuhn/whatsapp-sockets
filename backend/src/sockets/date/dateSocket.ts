@@ -5,7 +5,7 @@ const dateSocket = (socket: Socket) => {
   const interval = setInterval(() => {
     const response = new Date();
     socket.emit('FromAPI', response);
-  }, 1000);
+  }, 100);
 
   socket.on('disconnect', () => {
     clearInterval(interval);

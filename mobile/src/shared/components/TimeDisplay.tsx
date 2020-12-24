@@ -22,7 +22,7 @@ const TimeDisplay = () => {
   return (
     <View>
       <Text>
-        {`its ${moment(response).format('MMMM Do YYYY, h:mm:ss a')}`}
+        {`it's the ${moment(response).format('DD. MMMM YYYY, HH:mm:ss:SS')}`}
       </Text>
     </View>
   );
