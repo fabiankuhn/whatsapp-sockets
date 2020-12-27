@@ -5,6 +5,20 @@ import {
 import { io, Socket } from 'socket.io-client';
 import getEnvVars from '../../../environment';
 
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  input: {
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 5,
+    margin: 20,
+    width: 100,
+  },
+});
+
 const ChatInput = () => {
   const [chatMessage, setChatMessage] = useState<string>('');
   const { apiUrl } = getEnvVars();
@@ -32,19 +46,5 @@ const ChatInput = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  input: {
-    borderColor: 'black',
-    borderWidth: 1,
-    borderRadius: 5,
-    margin: 20,
-    width: 100,
-  },
-});
 
 export default ChatInput;
