@@ -6,10 +6,10 @@ type EnvVariables = {
 
 const ENV = {
   dev: {
-    apiUrl: 'http://127.0.0.1:4001',
+    apiUrl: 'http://192.168.100.80:4001',
   },
   prod: {
-    apiUrl: '',
+    apiUrl: 'http://127.0.0.1:4001',
   },
 };
 

@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import { Server } from 'socket.io';
 import { dateSocket } from './date/dateSocket';
+import { chatSocket } from './date/chatSocket';
 
 const socketServer = (io: Server) => {
   io.on('connection', (socket) => {
@@ -8,6 +9,7 @@ const socketServer = (io: Server) => {
 
     // Socket Instances
     dateSocket(socket);
+    chatSocket(socket, io);
 
     socket.on('disconnect', () => {
       console.log('Client disconnected');

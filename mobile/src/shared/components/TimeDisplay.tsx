@@ -10,7 +10,7 @@ const TimeDisplay = () => {
 
   useEffect(() => {
     const socket = io(apiUrl);
-    socket.on('FromAPI', (dateResponse: Date) => {
+    socket.on('dateTime', (dateResponse: Date) => {
       setDate(dateResponse);
     });
     return () => { socket.disconnect(); };

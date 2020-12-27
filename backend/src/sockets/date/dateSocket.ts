@@ -4,7 +4,7 @@ import { setInterval } from 'timers';
 const dateSocket = (socket: Socket) => {
   const interval = setInterval(() => {
     const response = new Date();
-    socket.emit('FromAPI', response);
+    socket.emit('dateTime', response);
   }, 100);
 
   socket.on('disconnect', () => {
