@@ -5,7 +5,7 @@ import {
 import { io, Socket } from 'socket.io-client';
 import getEnvVars from '../../../environment';
 
-const ChatInput = async () => {
+const ChatInput = () => {
   const [chatMessage, setChatMessage] = useState<string>('');
   const { apiUrl } = getEnvVars();
   const socket = useRef<Socket>();
