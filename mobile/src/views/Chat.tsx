@@ -71,7 +71,7 @@ const Chat = () => {
     socket.current = io(apiUrl);
     socket.current.on('chat message', (message: string) => {
       setMessages((prevState) => [
-        { isReceived: true, message },
+        { isForeign: true, message },
         ...prevState,
       ]);
     });
@@ -84,7 +84,7 @@ const Chat = () => {
     }
     socket.current?.emit('chat message', newMessage);
     setMessages((prevState) => [
-      { isReceived: false, message: newMessage },
+      { isForeign: false, message: newMessage },
       ...prevState,
     ]);
     setNewMessage('');
@@ -102,8 +102,8 @@ const Chat = () => {
           renderItem={({ item }) => (
             <View style={{
               ...styles.message,
-              alignSelf: item.isReceived ? 'flex-start' : 'flex-end',
-              backgroundColor: item.isReceived ? '#F5F6F7' : '#DAF8C5',
+              alignSelf: item.isForeign ? 'flex-start' : 'flex-end',
+              backgroundColor: item.isForeign ? '#F5F6F7' : '#DAF8C5',
             }}
             >
               <Text>
