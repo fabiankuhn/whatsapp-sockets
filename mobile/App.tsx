@@ -1,12 +1,11 @@
 /* eslint-disable react/style-prop-object */
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
-import { Button, StyleSheet, View } from 'react-native';
-import ChatInput from './src/shared/components/ChatInput';
-import TimeDisplay from './src/shared/components/TimeDisplay';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import Chat from './src/views/Chat';
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
@@ -15,24 +14,10 @@ const styles = StyleSheet.create({
 });
 
 export default function App() {
-  const [isTimeVisible, setIsTimeVisible] = useState<boolean>(false);
-  const [isInputVisible, setIsInputVisible] = useState<boolean>(false);
-
   return (
-    <View style={styles.container}>
+    <View style={styles.root}>
       <StatusBar style="auto" />
-
-      <Button
-        color="green"
-        title={isTimeVisible ? 'Hide Input' : 'Show Input'}
-        onPress={() => setIsInputVisible((prevState) => !prevState)}
-      />
-      {isInputVisible && <ChatInput />}
-      <Button
-        title={isTimeVisible ? 'Hide Time' : 'View Time'}
-        onPress={() => setIsTimeVisible((prevState) => !prevState)}
-      />
-      {isTimeVisible && <TimeDisplay /> }
+      <Chat />
     </View>
   );
 }
