@@ -9,7 +9,7 @@ const socketServer = (io: Server) => {
 
     // Socket Instances
     dateSocket(socket);
-    chatSocket(socket, io);
+    chatSocket(socket);
 
     socket.on('disconnect', () => {
       console.log('Client disconnected');

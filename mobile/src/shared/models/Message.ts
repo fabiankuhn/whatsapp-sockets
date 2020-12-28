@@ -1,4 +1,10 @@
 export interface Message {
+  id: string,
+  text: string
   isForeign: boolean
-  message: string
+}
+
+export interface MessageDto {
+  id: string,
+  text: string
 }

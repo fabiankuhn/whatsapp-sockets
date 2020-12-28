@@ -2,7 +2,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import Chat from './src/views/Chat';
+import Chat from './src/views/chat/Chat';
 
 const styles = StyleSheet.create({
   root: {
